@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | ExamBuddy</title>
+  <link rel="stylesheet" href="student-dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo"><div class="logo-icon">🎓</div><span>ExamBuddy</span></div>
+    <nav class="sidebar-nav">
+      <a href="#" class="active"><i class="fas fa-home"></i><span>Dashboard</span></a>
+      <a href="notes.html"><i class="fas fa-book"></i><span>My Notes</span></a>
+      <a href="pyq.html"><i class="fas fa-file-alt"></i><span>PYQs</span></a>
+      <a href="user-profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
+    </nav>
+    <div class="sidebar-footer"><a href="#" class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></div>
+  </aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left"><h1><span class="username" id="welcomeName">Student</span><span class="branch-badge" id="userBranch">All Branches</span></h1></div>
+      <div class="search-box"><i class="fas fa-search"></i><input id="searchInput" type="search" placeholder="Search notes, PYQs..." aria-label="Search notes and PYQs"></div>
+      <div class="topbar-right"><div class="profile"><div class="avatar" id="avatar">S</div><span class="username" id="profileName">Student</span></div></div>
+    </header>
+
+    <main class="dashboard-content">
+      <div class="branch-filter" aria-label="Filter by branch">
+        <button class="branch-btn active" data-branch="all">All</button>
+        <button class="branch-btn" data-branch="CSE">CSE</button>
+        <button class="branch-btn" data-branch="Civil">Civil</button>
+        <button class="branch-btn" data-branch="Electrical">Electrical</button>
+        <button class="branch-btn" data-branch="Electronics">Electronics</button>
+        <button class="branch-btn" data-branch="FPP">FPP</button>
+      </div>
+
+      <div class="quick-stats">
+        <div class="stat-card"><div class="stat-icon">📚</div><div class="stat-info"><div class="stat-label">Total Notes</div><div class="stat-value" id="totalNotes">0</div></div></div>
+        <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-info"><div class="stat-label">PYQs Available</div><div class="stat-value" id="totalPYQs">0</div></div></div>
+        <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-info"><div class="stat-label">Completed</div><div class="stat-value" id="completed">0</div></div></div>
+        <div class="stat-card"><div class="stat-icon">⏱️</div><div class="stat-info"><div class="stat-label">Study Time</div><div class="stat-value" id="studyTime">0h</div></div></div>
+      </div>
+
+      <div class="main-grid">
+        <section class="card notes-card"><div class="card-header"><h3><i class="fas fa-sticky-note"></i> Latest Notes</h3><a href="notes.html" class="view-all">View All</a></div><div class="card-body"><ul class="notes-list" id="notesList"></ul></div></section>
+        <section class="card pyqs-card"><div class="card-header"><h3><i class="fas fa-book-open"></i> Practice PYQs</h3><a href="pyq.html" class="view-all">View All</a></div><div class="card-body"><ul class="pyq-list" id="pyqList"></ul></div></section>
+      </div>
+
+      <section class="card progress-card"><div class="card-header"><h3><i class="fas fa-chart-line"></i> Your Learning Progress</h3></div><div class="card-body"><div class="progress-section"><div class="progress-item"><div class="progress-label"><span>Overall Progress</span><span class="progress-percent">0%</span></div><div class="progress-bar"><div class="progress-fill"></div></div></div><div class="progress-stats"><div class="progress-stat"><div class="progress-stat-icon">📚</div><div class="progress-stat-info"><div class="progress-stat-label">Notes Studied</div><div class="progress-stat-value" id="notesStudied">0</div></div></div><div class="progress-stat"><div class="progress-stat-icon">📝</div><div class="progress-stat-info"><div class="progress-stat-label">PYQs Solved</div><div class="progress-stat-value" id="pyqsSolved">0</div></div></div><div class="progress-stat"><div class="progress-stat-icon">⏱️</div><div class="progress-stat-info"><div class="progress-stat-label">Study Hours</div><div class="progress-stat-value" id="totalHours">0</div></div></div><div class="progress-stat"><div class="progress-stat-icon">🎯</div><div class="progress-stat-info"><div class="progress-stat-label">Accuracy</div><div class="progress-stat-value" id="accuracy">0%</div></div></div></div></div></div></section>
+    </main>
+  </div>
+
+  <script src="student-dashboard.js"></script>
+  <script src="logout.js"></script>
+</body>
+</html>

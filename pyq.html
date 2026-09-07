@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PYQs | ExamBuddy</title>
+
+  <link rel="stylesheet" href="pyq.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <main class="pyq-page">
+
+    <header class="page-header">
+      <a href="student-dashboard.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Dashboard
+      </a>
+
+      <div class="heading">
+        <p class="eyebrow">Practice Center</p>
+        <h1>Previous Year Questions</h1>
+      </div>
+
+      <a href="user-profile.html" class="profile-link">
+        <i class="fas fa-user"></i>
+        Profile
+      </a>
+    </header>
+
+    <section class="toolbar">
+
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search PYQs, subjects..."
+          aria-label="Search PYQs"
+        >
+      </div>
+
+      <select id="branchFilter" aria-label="Filter PYQs by branch">
+        <option value="all">All Branches</option>
+        <option value="CSE">CSE</option>
+        <option value="Civil">Civil</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Electronics">Electronics</option>
+        <option value="FPP">FPP</option>
+      </select>
+
+      <select id="difficultyFilter" aria-label="Filter PYQs by difficulty">
+        <option value="all">All Difficulty</option>
+        <option value="Easy">Easy</option>
+        <option value="Normal">Normal</option>
+        <option value="Hard">Hard</option>
+      </select>
+
+    </section>
+
+    <section class="pyq-card">
+
+      <div class="card-header">
+        <h2>
+          <i class="fas fa-file-circle-question"></i>
+          Practice PYQs
+        </h2>
+
+        <span id="pyqCount">0 questions</span>
+      </div>
+
+      <div id="pyqList" class="pyq-list"></div>
+
+    </section>
+
+  </main>
+
+  <script src="pyq.js"></script>
+
+</body>
+
+</html>

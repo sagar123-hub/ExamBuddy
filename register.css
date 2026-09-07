@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #6c63ff;
+  --primary-dark: #5148d9;
+  --text: #25243a;
+  --muted: #77758c;
+  --border: #e5e4ef;
+  --white: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e9e7ff, #f8fbff);
+}
+
+.register-container {
+  width: min(100%, 470px);
+  padding: 34px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 55px rgba(62, 55, 130, 0.16);
+}
+
+.logo-section {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.logo-icon {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  border-radius: 20px;
+  font-size: 34px;
+  background: linear-gradient(135deg, var(--primary), #9b7cff);
+}
+
+.logo-section h1 {
+  font-size: 28px;
+}
+
+.tagline {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label,
+.role-group legend {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-group label i,
+.role-group legend i {
+  width: 18px;
+  margin-right: 4px;
+  color: var(--primary);
+}
+
+.input-group input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  color: var(--text);
+  background: #fbfbff;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.12);
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 50px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.toggle-password:hover {
+  color: var(--primary);
+  background: #eeedff;
+}
+
+.role-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 22px 0;
+  border: 0;
+}
+
+.role-group legend {
+  grid-column: 1 / -1;
+}
+
+.role-option {
+  position: relative;
+  cursor: pointer;
+}
+
+.role-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.role-option span {
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  background: #fbfbff;
+  transition: 0.2s ease;
+}
+
+.role-option span i {
+  color: var(--primary);
+  font-size: 22px;
+}
+
+.role-option:hover span,
+.role-option input:checked + span {
+  border-color: var(--primary);
+  color: var(--primary-dark);
+  background: #eeedff;
+  transform: translateY(-2px);
+}
+
+.form-message {
+  min-height: 18px;
+  margin: 4px 0 12px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.form-message.error {
+  color: #d8425a;
+}
+
+.form-message.success {
+  color: #16895b;
+}
+
+.register-btn {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 11px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+}
+
+.register-btn i {
+  margin-right: 8px;
+}
+
+.login-link {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-link a {
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 14px;
+  }
+
+  .register-container {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .role-group {
+    grid-template-columns: 1fr;
+  }
+
+  .role-option span {
+    min-height: 58px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px 16px;
+  }
+}

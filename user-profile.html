@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile | ExamBuddy</title>
+
+  <link rel="stylesheet" href="user-profile.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <main class="profile-page">
+
+    <header class="page-header">
+      <a href="student-dashboard.html" class="back-link" id="backLink">
+        <i class="fas fa-arrow-left"></i>
+        Dashboard
+      </a>
+
+      <div class="heading">
+        <p class="eyebrow">Account Settings</p>
+        <h1>User Profile</h1>
+      </div>
+
+      <span class="header-space"></span>
+    </header>
+
+    <section class="profile-card">
+      <div class="avatar" id="avatar">S</div>
+      <h2 id="profileName">Student</h2>
+      <p id="profileEmail" class="profile-email">student@example.com</p>
+      <span id="profileRole" class="role-badge">Student</span>
+    </section>
+
+    <section class="details-card">
+      <div class="card-heading">
+        <h2>
+          <i class="fas fa-user-pen"></i>
+          Profile Details
+        </h2>
+      </div>
+
+      <form id="profileForm">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="branch">Branch</label>
+          <select id="branch">
+            <option value="CSE">CSE</option>
+            <option value="Civil">Civil</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Electronics">Electronics</option>
+            <option value="FPP">FPP</option>
+          </select>
+        </div>
+
+        <button type="submit" class="save-btn">
+          <i class="fas fa-save"></i>
+          Save Changes
+        </button>
+
+        <p id="message" class="message" role="alert"></p>
+      </form>
+    </section>
+
+    <button type="button" id="logoutBtn" class="logout-btn">
+      <i class="fas fa-sign-out-alt"></i>
+      Logout
+    </button>
+
+  </main>
+
+  <script src="user-profile.js"></script>
+
+</body>
+
+</html>

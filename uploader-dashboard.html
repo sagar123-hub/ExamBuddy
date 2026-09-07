@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploader Dashboard | ExamBuddy</title>
+  <link rel="stylesheet" href="uploader-dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo"><div class="logo-icon">📤</div><span>ExamBuddy</span></div>
+    <nav class="sidebar-nav">
+      <a href="#" class="active"><i class="fas fa-home"></i><span>Dashboard</span></a>
+      <a href="#upload"><i class="fas fa-cloud-upload-alt"></i><span>Upload Material</span></a>
+      <a href="#materials"><i class="fas fa-folder-open"></i><span>My Materials</span></a>
+      <a href="uploder-profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
+    </nav>
+    <div class="sidebar-footer"><a href="#" class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></div>
+  </aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div><p class="eyebrow">Uploader Dashboard</p><h1>Welcome, <span id="userName">Uploader</span>!</h1></div>
+      <div class="profile"><div class="avatar" id="avatar">U</div><span id="profileName">Uploader</span></div>
+    </header>
+
+    <main class="dashboard-content">
+      <section class="hero-card">
+        <div><p class="eyebrow light">Share knowledge with students</p><h2>Upload helpful study materials</h2><p>Add notes and previous-year questions for your selected branch and subject.</p><a href="#upload" class="primary-btn">Start Upload <i class="fas fa-arrow-down"></i></a></div>
+        <div class="hero-icon"><i class="fas fa-file-arrow-up"></i></div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card"><div class="stat-icon">📚</div><div><span>Total Notes</span><strong id="totalNotes">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon">📝</div><div><span>Total PYQs</span><strong id="totalPYQs">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon">✅</div><div><span>Published Items</span><strong id="publishedItems">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon">👥</div><div><span>Students Reached</span><strong id="studentsReached">0</strong></div></article>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel upload-panel" id="upload">
+          <div class="panel-heading"><h2><i class="fas fa-cloud-upload-alt"></i> Upload Material</h2></div>
+          <form id="uploadForm">
+            <label for="materialType">Material Type</label>
+            <select id="materialType" required><option value="note">Note</option><option value="pyq">PYQ</option></select>
+
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="e.g. HTML Unit 1 Notes" required>
+
+            <label for="branch">Branch</label>
+            <select id="branch" required><option value="CSE">CSE</option><option value="Civil">Civil</option><option value="Electrical">Electrical</option><option value="Electronics">Electronics</option><option value="FPP">FPP</option></select>
+
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" placeholder="e.g. Web Development" required>
+
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty"><option>Easy</option><option selected>Normal</option><option>Hard</option></select>
+
+            <label for="description">Description</label>
+            <textarea id="description" rows="3" placeholder="Write a short description"></textarea>
+
+            <label for="file">Choose File <span class="optional">(demo only)</span></label>
+            <input id="file" type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt">
+
+            <button class="primary-btn submit-btn" type="submit"><i class="fas fa-upload"></i> Publish Material</button>
+            <p id="uploadMessage" class="message" role="alert"></p>
+          </form>
+        </div>
+
+        <div class="panel" id="materials">
+          <div class="panel-heading"><h2><i class="fas fa-folder-open"></i> Recent Materials</h2><button class="clear-btn" id="clearMaterials" type="button">Clear all</button></div>
+          <div id="materialsList" class="materials-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="uploader-dashboard.js"></script>
+  <script src="logout.js"></script>
+</body>
+</html>

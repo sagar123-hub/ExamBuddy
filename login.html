@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | ExamBuddy</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <main class="login-container">
+    <section class="logo-section">
+      <div class="logo-icon">📚</div>
+      <h1>ExamBuddy</h1>
+      <p class="tagline">Your Learning Partner</p>
+    </section>
+
+    <div class="social-buttons">
+      <button type="button" class="social-btn google-btn"><i class="fab fa-google"></i> Continue with Google</button>
+      <button type="button" class="social-btn apple-btn"><i class="fab fa-apple"></i> Continue with Apple</button>
+    </div>
+
+    <div class="divider"><span>OR</span></div>
+
+    <form id="loginForm" novalidate>
+      <div class="input-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+        <input type="email" id="email" placeholder="Enter your email" autocomplete="email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password"><i class="fas fa-lock"></i> Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" required>
+          <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password"><i class="fas fa-eye" id="eyeIcon"></i></button>
+        </div>
+      </div>
+
+      <a href="forgot password.html" class="forgot-link" id="forgotPassword">Forgot password?</a>
+      <p id="formMessage" class="form-message" role="alert"></p>
+
+      <button type="submit" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </form>
+
+    <p class="register-link">New here? <a href="register.html">Create account</a></p>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
